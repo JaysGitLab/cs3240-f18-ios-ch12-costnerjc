@@ -20,6 +20,12 @@ class FirstViewController: UIViewController {
     @IBOutlet var favoriteGadgetLabel:UILabel!
     @IBOutlet var favoriteAlienLabel:UILabel!
     
+    @objc func applicationWillEnterForeground(notification:NSNotification) {
+        let defaults = UserDefaults.standard
+        defaults.synchronize()
+        refreshFields()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,8 +45,15 @@ class FirstViewController: UIViewController {
         favoriteAlienLabel.text = defaults.string(forKey: favoriteAlienKey)
     }
     override func viewWillAppear(_ animated: Bool) {
+        let app = UIApplication.shared
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillEnterForeground(notification:)), name: UIApplication.willEnterForegroundNotification, object: app)
         super.viewWillAppear(animated)
         refreshFields()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
