@@ -35,6 +35,11 @@ class SecondViewController: UIViewController {
         defaults.synchronize()
     }
     @IBAction func onSettingsButtonTapped(_ sender: Any) {
+        let application = UIApplication.shared
+        let url = URL(string: UIApplication.openSettingsURLString)! as URL
+        if application.canOpenURL(url) {
+            application.open(url, options:[UIApplication.OpenExternalURLOptionsKey(rawValue: ""):""] , completionHandler: nil)
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         let app = UIApplication.shared
