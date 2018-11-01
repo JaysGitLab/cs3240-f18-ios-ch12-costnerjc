@@ -213,34 +213,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106.66666666666669" y="346.66666666666669" width="201" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warp Engines:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFo-lf-lyi">
+                                <rect key="frame" x="20" y="57" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.666666666666686" y="397.66666666666669" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warp Factor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-YM-0Hc">
+                                <rect key="frame" x="20" y="102" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltq-TF-zFv">
+                                <rect key="frame" x="345" y="52" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onEngineSwitchTapped:" destination="8rJ-Kc-sve" eventType="valueChanged" id="3Zl-9G-QWf"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" minimumValueImage="turtle" maximumValueImage="rabbit" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-Xc-KOT">
+                                <rect key="frame" x="170" y="98" width="226" height="30"/>
+                                <connections>
+                                    <action selector="onWarpSliderDragged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="Jw1-M7-qcV"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCN-Zc-GNX">
+                                <rect key="frame" x="117.66666666666669" y="642" width="179" height="30"/>
+                                <state key="normal" title="Open Settings Application"/>
+                                <connections>
+                                    <action selector="onSettingsButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tjD-Nz-JNd"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="zFo-lf-lyi" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="0Gp-uE-SJ0"/>
+                            <constraint firstItem="ltq-TF-zFv" firstAttribute="leading" secondItem="zFo-lf-lyi" secondAttribute="trailing" constant="215" id="3Au-a7-v1d"/>
+                            <constraint firstItem="jLp-YM-0Hc" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="4WE-e2-tSX"/>
+                            <constraint firstItem="SCN-Zc-GNX" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="KS6-4u-iKc"/>
+                            <constraint firstItem="ltq-TF-zFv" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="32" id="M2n-93-7Mx"/>
+                            <constraint firstItem="jLp-YM-0Hc" firstAttribute="centerY" secondItem="hU8-Xc-KOT" secondAttribute="centerY" id="TK1-pD-mcY"/>
+                            <constraint firstItem="hU8-Xc-KOT" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="78" id="W2a-Hb-mAI"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="jLp-YM-0Hc" secondAttribute="bottom" constant="564" id="Yjy-PZ-h52"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="ltq-TF-zFv" secondAttribute="trailing" constant="20" id="aol-Nq-Kjk"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="hU8-Xc-KOT" secondAttribute="trailing" constant="20" id="hue-QC-Dc9"/>
+                            <constraint firstItem="jLp-YM-0Hc" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="82" id="mbJ-0f-1v1"/>
+                            <constraint firstItem="hU8-Xc-KOT" firstAttribute="leading" secondItem="jLp-YM-0Hc" secondAttribute="trailing" constant="54" id="q1o-EE-kWx"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="SCN-Zc-GNX" secondAttribute="bottom" constant="15" id="xbp-Ho-8Co"/>
+                            <constraint firstItem="zFo-lf-lyi" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="37" id="z8r-1f-4oK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="doubleicon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="engineSwitch" destination="ltq-TF-zFv" id="Ibh-Gy-Q9y"/>
+                        <outlet property="warpFactorSlider" destination="hU8-Xc-KOT" id="WKb-0I-jD9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.27536231884062" y="359.51086956521743"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -263,6 +295,8 @@
     </scenes>
     <resources>
         <image name="doubleicon" width="37.5" height="36"/>
+        <image name="rabbit" width="21" height="21"/>
         <image name="singleicon" width="37.5" height="36"/>
+        <image name="turtle" width="21" height="21"/>
     </resources>
 </document>
