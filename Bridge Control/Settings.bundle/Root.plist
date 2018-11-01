@@ -83,6 +83,10 @@
 			<string>Warp Factor</string>
 		</dict>
 		<dict>
+			<key>MaximumValueImage</key>
+			<string>rabbit</string>
+			<key>MinimumValueImage</key>
+			<string>turtle</string>
 			<key>Type</key>
 			<string>PSSliderSpecifier</string>
 			<key>Key</key>
